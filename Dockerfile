@@ -1,4 +1,5 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY target/springboot-example.jar springboot-example.jar
 EXPOSE 8080
-ADD  target/java-workflow-action-1.jar java-workflow-action-1.jar
-ENTRYPOINT [ "java","-jar","/java-workflow-action-1.jar" ]
+CMD ["java","-jar","springboot-example.jar"]
