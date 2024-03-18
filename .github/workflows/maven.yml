@@ -16,7 +16,7 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker image
-        run: docker build -t sailaxman7349/java-workflow-action-1 .
+        run: docker build -t sailaxman7349/java-workflow-action-1 -f /path/to/Dockerfile .
       - name: Publish image to docker hub
         run: docker push sailaxman7349/java-workflow-action-1:latest
 
